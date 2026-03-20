@@ -53,9 +53,9 @@ export default function HomeClient({ props, settings }: { props: any, settings: 
       <section className="woc-section">
         <div className="woc-container">
           <FadeUp>
-            <div className="text-center mb-32 flex flex-col items-center gap-8">
-              <h2 className="woc-eyebrow woc-eyebrow--lined justify-center">The Collection</h2>
-              <p className="woc-h2">Signature Scents</p>
+            <div className="text-center" style={{ paddingBottom: "120px" }}>
+              <h2 className="woc-eyebrow woc-eyebrow--lined justify-center" style={{ marginBottom: "24px" }}>The Collection</h2>
+              <p className="woc-h2" style={{ margin: 0, padding: 0, lineHeight: 1.1 }}>Signature Scents</p>
             </div>
           </FadeUp>
 
