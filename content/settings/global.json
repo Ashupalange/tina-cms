@@ -5,12 +5,24 @@
   "logoImage": null,
   "navLinks": [
     {
-      "label": "About",
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About Us",
       "href": "/about"
     },
     {
-      "label": "Collection",
+      "label": "Shop",
+      "href": "/shop"
+    },
+    {
+      "label": "Collections",
       "href": "/collection"
+    },
+    {
+      "label": "Blogs",
+      "href": "/blogs"
     },
     {
       "label": "Contact",
