@@ -19,6 +19,10 @@
     {
       "label": "Shop",
       "href": "/shop"
+    },
+    {
+      "label": "Collections",
+      "href": "/Collections"
     }
   ],
   "navCtaLabel": "enquire now ",
