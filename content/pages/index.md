@@ -1,7 +1,7 @@
 ---
 title: Home
 headline: "Memories suspended in glass."
-heroImage: "/uploads/hero_banner_v2.png"
+heroImage: "https://source.unsplash.com/1920x1080/?perfume,minimal,nature,luxury"
 introQuote: "Scent is the most powerful memory trigger we possess. Our creations are designed to be unforgettable."
 signatureScents:
   - title: "Velvet Amber"
