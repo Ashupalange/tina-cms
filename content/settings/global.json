@@ -13,10 +13,6 @@
       "href": "/about"
     },
     {
-      "label": "Contact",
-      "href": "/contact"
-    },
-    {
       "label": "Shop",
       "href": "/shop"
     },
@@ -27,6 +23,10 @@
     {
       "label": "Blogs",
       "href": "/Blogs"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
     }
   ],
   "navCtaLabel": "enquire now ",
