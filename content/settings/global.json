@@ -1,56 +1,40 @@
 {
-  "siteName": "Mayur's site setting test.",
-  "siteTagline": "mayur",
-  "logoText": "Brand",
+  "siteName": "Essenzaa",
+  "siteTagline": "Perfumes & Scents",
+  "logoText": "Essenzaa",
   "logoImage": null,
   "navLinks": [
     {
-      "label": "Home ",
-      "href": "https://www.ikf.co.in/"
+      "label": "About",
+      "href": "/about"
     },
     {
-      "label": "Linkedin",
-      "href": "/Linkedin"
-    },
-    {
-      "label": "Shop",
-      "href": "/shop"
-    },
-    {
-      "label": "Collections",
-      "href": "/Collections"
-    },
-    {
-      "label": "Blogs",
-      "href": "/Blogs"
+      "label": "Collection",
+      "href": "/collection"
     },
     {
       "label": "Contact",
       "href": "/contact"
     }
   ],
-  "navCtaLabel": "enquire now ",
+  "navCtaLabel": "Private Concierge",
   "navCtaLink": "/contact",
-  "footerTagline": "",
+  "footerTagline": "Memories suspended in glass.",
   "footerLinks": [
     {
-      "label": "Youtube ",
-      "href": "/youtube "
+      "label": "About",
+      "href": "/about"
     },
     {
-      "label": "Linkedin",
-      "href": "/Linkedin"
+      "label": "Collection",
+      "href": "/collection"
     },
     {
-      "label": "Instagram",
-      "href": "/instagram"
-    },
-    {
-      "label": "Facebook",
-      "href": "/facebook"
+      "label": "Contact",
+      "href": "/contact"
     }
   ],
-  "copyrightText": "",
-  "googleFontsUrl": "",
+  "copyrightText": "© 2026 Essenzaa. All rights reserved.",
+  "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@400;500&display=swap",
   "socialLinks": []
 }

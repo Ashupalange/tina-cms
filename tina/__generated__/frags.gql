@@ -25,3 +25,57 @@ fragment SettingsParts on Settings {
     url
   }
 }
+
+fragment HomeParts on Home {
+  __typename
+  title
+  headline
+  heroImage
+  introQuote
+  signatureScents {
+    __typename
+    title
+    notes
+    image
+  }
+  atelierTitle
+  atelierText
+  atelierImage
+}
+
+fragment AboutParts on About {
+  __typename
+  title
+  headline
+  originImage
+  originStory
+  pillars {
+    __typename
+    title
+    description
+  }
+}
+
+fragment CollectionPageParts on CollectionPage {
+  __typename
+  title
+  headline
+  subheadline
+  scents {
+    __typename
+    title
+    notes
+    description
+    image
+  }
+}
+
+fragment ContactParts on Contact {
+  __typename
+  title
+  headline
+  subheadline
+  email
+  instagram
+  phone
+}

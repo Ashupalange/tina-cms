@@ -60,6 +60,99 @@ var settingsCollection = {
     }
   ]
 };
+var homeCollection = {
+  name: "home",
+  label: "Home Page",
+  path: "content/pages",
+  format: "md",
+  match: { include: "index" },
+  ui: { router: () => "/" },
+  fields: [
+    { name: "title", label: "Page Title", type: "string", isTitle: true, required: true },
+    { name: "headline", label: "Hero Headline", type: "string" },
+    { name: "heroImage", label: "Hero Image", type: "image" },
+    { name: "introQuote", label: "Introductory Quote", type: "string", ui: { component: "textarea" } },
+    {
+      name: "signatureScents",
+      label: "Signature Scents (Split Layout)",
+      type: "object",
+      list: true,
+      fields: [
+        { name: "title", label: "Title", type: "string" },
+        { name: "notes", label: "Scent Notes / Feeling", type: "string", ui: { component: "textarea" } },
+        { name: "image", label: "Texture Image", type: "image" }
+      ]
+    },
+    { name: "atelierTitle", label: "Atelier Title", type: "string" },
+    { name: "atelierText", label: "Atelier Text", type: "string", ui: { component: "textarea" } },
+    { name: "atelierImage", label: "Atelier Image", type: "image" }
+  ]
+};
+var aboutCollection = {
+  name: "about",
+  label: "About Page",
+  path: "content/pages",
+  format: "md",
+  match: { include: "about" },
+  ui: { router: () => "/about" },
+  fields: [
+    { name: "title", label: "Page Title", type: "string", isTitle: true, required: true },
+    { name: "headline", label: "Vision Statement", type: "string", ui: { component: "textarea" } },
+    { name: "originImage", label: "Origin Image", type: "image" },
+    { name: "originStory", label: "Origin Story", type: "string", ui: { component: "textarea" } },
+    {
+      name: "pillars",
+      label: "Brand Ethos Pillars",
+      type: "object",
+      list: true,
+      fields: [
+        { name: "title", label: "Title", type: "string" },
+        { name: "description", label: "Description", type: "string", ui: { component: "textarea" } }
+      ]
+    }
+  ]
+};
+var collectionCollection = {
+  name: "collectionPage",
+  label: "Collection Page",
+  path: "content/pages",
+  format: "md",
+  match: { include: "collection" },
+  ui: { router: () => "/collection" },
+  fields: [
+    { name: "title", label: "Page Title", type: "string", isTitle: true, required: true },
+    { name: "headline", label: "Entrance Headline", type: "string" },
+    { name: "subheadline", label: "Entrance Subheadline", type: "string", ui: { component: "textarea" } },
+    {
+      name: "scents",
+      label: "The Scents",
+      type: "object",
+      list: true,
+      fields: [
+        { name: "title", label: "Scent Name", type: "string" },
+        { name: "notes", label: "Scent Notes", type: "string" },
+        { name: "description", label: "Description", type: "string", ui: { component: "textarea" } },
+        { name: "image", label: "Bottle / Scent Image", type: "image" }
+      ]
+    }
+  ]
+};
+var contactCollection = {
+  name: "contact",
+  label: "Contact Page",
+  path: "content/pages",
+  format: "md",
+  match: { include: "contact" },
+  ui: { router: () => "/contact" },
+  fields: [
+    { name: "title", label: "Page Title", type: "string", isTitle: true, required: true },
+    { name: "headline", label: "Headline", type: "string" },
+    { name: "subheadline", label: "Subheadline", type: "string", ui: { component: "textarea" } },
+    { name: "email", label: "Inquiries Email", type: "string" },
+    { name: "instagram", label: "Instagram Handle", type: "string" },
+    { name: "phone", label: "Concierge Phone", type: "string" }
+  ]
+};
 var config_default = defineConfig({
   branch,
   clientId: tinaClientId,
@@ -82,8 +175,11 @@ var config_default = defineConfig({
   },
   schema: {
     collections: [
-      settingsCollection
-      // Agent appends page collections here
+      settingsCollection,
+      homeCollection,
+      aboutCollection,
+      collectionCollection,
+      contactCollection
     ]
   }
 });
