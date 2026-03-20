@@ -1,12 +1,12 @@
-// SCHEMA FIELDS FOR THIS PAGE
+// SCHEMA FIELDS FOR THIS PAGE (Cafedelightt)
 // -----------------------------------------------------------------------
-// headline            string
-// heroImage           image
-// introQuote          string (textarea)
-// signatureScents     object[] — { title, notes, image }
-// atelierTitle        string
-// atelierText         string (textarea)
-// atelierImage        image
+// title               string
+// hero                object { tagline, ctaPrimary, ctaSecondary, backgroundImage }
+// about               object { headline, story, image }
+// menu                object { headline, items[] }
+// experience          object { headline, description, gallery[] }
+// testimonials        object { headline, list[] }
+// location            object { headline, address, hours, whatsappNumber }
 // -----------------------------------------------------------------------
 
 import client from "../../tina/__generated__/client";

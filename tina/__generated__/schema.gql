@@ -58,20 +58,11 @@ type Query {
   settingsConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: SettingsFilter): SettingsConnection!
   home(relativePath: String): Home!
   homeConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: HomeFilter): HomeConnection!
-  about(relativePath: String): About!
-  aboutConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: AboutFilter): AboutConnection!
-  collectionPage(relativePath: String): CollectionPage!
-  collectionPageConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: CollectionPageFilter): CollectionPageConnection!
-  contact(relativePath: String): Contact!
-  contactConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: ContactFilter): ContactConnection!
 }
 
 input DocumentFilter {
   settings: SettingsFilter
   home: HomeFilter
-  about: AboutFilter
-  collectionPage: CollectionPageFilter
-  contact: ContactFilter
 }
 
 type DocumentConnectionEdges {
@@ -97,7 +88,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Settings | Home | About | CollectionPage | Contact | Folder
+union DocumentNode = Settings | Home | Folder
 
 type SettingsNavLinks {
   label: String!
@@ -187,41 +178,121 @@ type SettingsConnection implements Connection {
   edges: [SettingsConnectionEdges]
 }
 
-type HomeSignatureScents {
-  title: String
-  notes: String
+type HomeHero {
+  tagline: String
+  ctaPrimary: String
+  ctaSecondary: String
+  backgroundImage: String
+}
+
+type HomeAbout {
+  headline: String
+  story: String
   image: String
+}
+
+type HomeMenuItems {
+  name: String
+  description: String
+  image: String
+}
+
+type HomeMenu {
+  headline: String
+  items: [HomeMenuItems]
+}
+
+type HomeExperience {
+  headline: String
+  description: String
+  gallery: [String]
+}
+
+type HomeTestimonialsList {
+  quote: String
+  author: String
+}
+
+type HomeTestimonials {
+  headline: String
+  list: [HomeTestimonialsList]
+}
+
+type HomeLocation {
+  headline: String
+  address: String
+  hours: String
+  whatsappNumber: String
 }
 
 type Home implements Node & Document {
   title: String!
-  headline: String
-  heroImage: String
-  introQuote: String
-  signatureScents: [HomeSignatureScents]
-  atelierTitle: String
-  atelierText: String
-  atelierImage: String
+  hero: HomeHero
+  about: HomeAbout
+  menu: HomeMenu
+  experience: HomeExperience
+  testimonials: HomeTestimonials
+  location: HomeLocation
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
 }
 
-input HomeSignatureScentsFilter {
-  title: StringFilter
-  notes: StringFilter
+input HomeHeroFilter {
+  tagline: StringFilter
+  ctaPrimary: StringFilter
+  ctaSecondary: StringFilter
+  backgroundImage: ImageFilter
+}
+
+input HomeAboutFilter {
+  headline: StringFilter
+  story: StringFilter
   image: ImageFilter
+}
+
+input HomeMenuItemsFilter {
+  name: StringFilter
+  description: StringFilter
+  image: ImageFilter
+}
+
+input HomeMenuFilter {
+  headline: StringFilter
+  items: HomeMenuItemsFilter
+}
+
+input HomeExperienceFilter {
+  headline: StringFilter
+  description: StringFilter
+  gallery: ImageFilter
+}
+
+input HomeTestimonialsListFilter {
+  quote: StringFilter
+  author: StringFilter
+}
+
+input HomeTestimonialsFilter {
+  headline: StringFilter
+  list: HomeTestimonialsListFilter
+}
+
+input HomeLocationFilter {
+  headline: StringFilter
+  address: StringFilter
+  hours: StringFilter
+  whatsappNumber: StringFilter
 }
 
 input HomeFilter {
   title: StringFilter
-  headline: StringFilter
-  heroImage: ImageFilter
-  introQuote: StringFilter
-  signatureScents: HomeSignatureScentsFilter
-  atelierTitle: StringFilter
-  atelierText: StringFilter
-  atelierImage: ImageFilter
+  hero: HomeHeroFilter
+  about: HomeAboutFilter
+  menu: HomeMenuFilter
+  experience: HomeExperienceFilter
+  testimonials: HomeTestimonialsFilter
+  location: HomeLocationFilter
 }
 
 type HomeConnectionEdges {
@@ -235,120 +306,6 @@ type HomeConnection implements Connection {
   edges: [HomeConnectionEdges]
 }
 
-type AboutPillars {
-  title: String
-  description: String
-}
-
-type About implements Node & Document {
-  title: String!
-  headline: String
-  originImage: String
-  originStory: String
-  pillars: [AboutPillars]
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input AboutPillarsFilter {
-  title: StringFilter
-  description: StringFilter
-}
-
-input AboutFilter {
-  title: StringFilter
-  headline: StringFilter
-  originImage: ImageFilter
-  originStory: StringFilter
-  pillars: AboutPillarsFilter
-}
-
-type AboutConnectionEdges {
-  cursor: String!
-  node: About
-}
-
-type AboutConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [AboutConnectionEdges]
-}
-
-type CollectionPageScents {
-  title: String
-  notes: String
-  description: String
-  image: String
-}
-
-type CollectionPage implements Node & Document {
-  title: String!
-  headline: String
-  subheadline: String
-  scents: [CollectionPageScents]
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input CollectionPageScentsFilter {
-  title: StringFilter
-  notes: StringFilter
-  description: StringFilter
-  image: ImageFilter
-}
-
-input CollectionPageFilter {
-  title: StringFilter
-  headline: StringFilter
-  subheadline: StringFilter
-  scents: CollectionPageScentsFilter
-}
-
-type CollectionPageConnectionEdges {
-  cursor: String!
-  node: CollectionPage
-}
-
-type CollectionPageConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [CollectionPageConnectionEdges]
-}
-
-type Contact implements Node & Document {
-  title: String!
-  headline: String
-  subheadline: String
-  email: String
-  instagram: String
-  phone: String
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input ContactFilter {
-  title: StringFilter
-  headline: StringFilter
-  subheadline: StringFilter
-  email: StringFilter
-  instagram: StringFilter
-  phone: StringFilter
-}
-
-type ContactConnectionEdges {
-  cursor: String!
-  node: Contact
-}
-
-type ContactConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [ContactConnectionEdges]
-}
-
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentUpdateMutation!): DocumentNode!
@@ -359,29 +316,17 @@ type Mutation {
   createSettings(relativePath: String!, params: SettingsMutation!): Settings!
   updateHome(relativePath: String!, params: HomeMutation!): Home!
   createHome(relativePath: String!, params: HomeMutation!): Home!
-  updateAbout(relativePath: String!, params: AboutMutation!): About!
-  createAbout(relativePath: String!, params: AboutMutation!): About!
-  updateCollectionPage(relativePath: String!, params: CollectionPageMutation!): CollectionPage!
-  createCollectionPage(relativePath: String!, params: CollectionPageMutation!): CollectionPage!
-  updateContact(relativePath: String!, params: ContactMutation!): Contact!
-  createContact(relativePath: String!, params: ContactMutation!): Contact!
 }
 
 input DocumentUpdateMutation {
   settings: SettingsMutation
   home: HomeMutation
-  about: AboutMutation
-  collectionPage: CollectionPageMutation
-  contact: ContactMutation
   relativePath: String
 }
 
 input DocumentMutation {
   settings: SettingsMutation
   home: HomeMutation
-  about: AboutMutation
-  collectionPage: CollectionPageMutation
-  contact: ContactMutation
 }
 
 input SettingsNavLinksMutation {
@@ -414,57 +359,61 @@ input SettingsMutation {
   socialLinks: [SettingsSocialLinksMutation]
 }
 
-input HomeSignatureScentsMutation {
-  title: String
-  notes: String
+input HomeHeroMutation {
+  tagline: String
+  ctaPrimary: String
+  ctaSecondary: String
+  backgroundImage: String
+}
+
+input HomeAboutMutation {
+  headline: String
+  story: String
   image: String
+}
+
+input HomeMenuItemsMutation {
+  name: String
+  description: String
+  image: String
+}
+
+input HomeMenuMutation {
+  headline: String
+  items: [HomeMenuItemsMutation]
+}
+
+input HomeExperienceMutation {
+  headline: String
+  description: String
+  gallery: [String]
+}
+
+input HomeTestimonialsListMutation {
+  quote: String
+  author: String
+}
+
+input HomeTestimonialsMutation {
+  headline: String
+  list: [HomeTestimonialsListMutation]
+}
+
+input HomeLocationMutation {
+  headline: String
+  address: String
+  hours: String
+  whatsappNumber: String
 }
 
 input HomeMutation {
   title: String
-  headline: String
-  heroImage: String
-  introQuote: String
-  signatureScents: [HomeSignatureScentsMutation]
-  atelierTitle: String
-  atelierText: String
-  atelierImage: String
-}
-
-input AboutPillarsMutation {
-  title: String
-  description: String
-}
-
-input AboutMutation {
-  title: String
-  headline: String
-  originImage: String
-  originStory: String
-  pillars: [AboutPillarsMutation]
-}
-
-input CollectionPageScentsMutation {
-  title: String
-  notes: String
-  description: String
-  image: String
-}
-
-input CollectionPageMutation {
-  title: String
-  headline: String
-  subheadline: String
-  scents: [CollectionPageScentsMutation]
-}
-
-input ContactMutation {
-  title: String
-  headline: String
-  subheadline: String
-  email: String
-  instagram: String
-  phone: String
+  hero: HomeHeroMutation
+  about: HomeAboutMutation
+  menu: HomeMenuMutation
+  experience: HomeExperienceMutation
+  testimonials: HomeTestimonialsMutation
+  location: HomeLocationMutation
 }
 
 schema {

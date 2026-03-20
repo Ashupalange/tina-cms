@@ -13,49 +13,49 @@
    ===================================================== */
 
 @theme {
-  /* --- COLOR --- */
-  --color-primary: #1A1412;
-  --color-primary-foreground: #F8F4EF;
+  /* --- COLOR: Cafedelightt Premium Sanctuary --- */
+  --color-primary: #6F4E37; /* Coffee Brown */
+  --color-primary-foreground: #FAF7F2;
 
-  --color-secondary: #C89F70;
-  --color-secondary-foreground: #1A1412;
+  --color-secondary: #C8A27C; /* Caramel */
+  --color-secondary-foreground: #6F4E37;
 
-  --color-background: #FDFCFA;
-  --color-foreground: #2A2422;
+  --color-background: #FAF7F2; /* Soft White */
+  --color-foreground: #3E2B1F; /* Dark Espresso */
   
-  --color-surface: #F4EFEA;
-  --color-surface-border: #E8DED4;
+  --color-surface: #F5E9DC; /* Cream */
+  --color-surface-border: color-mix(in srgb, var(--color-primary) 10%, transparent);
 
-  --color-muted: #8A7D75;
+  --color-muted: #7A8F7B; /* Muted Green */
 
-  --color-dark: #14100E;
-  --color-dark-foreground: #F5EFEB;
+  --color-dark: #3E2B1F; 
+  --color-dark-foreground: #F5E9DC;
 
   /* --- TYPOGRAPHY --- */
-  --font-heading: 'Cormorant Garamond', serif;
+  --font-heading: 'Playfair Display', serif;
   --font-sans: 'Inter', sans-serif;
 
   /* --- SPACING --- */
-  --section-padding-y: 5rem;
-  --section-padding-y-sm: 3rem;
-  --section-padding-y-lg: 7rem;
-  --container-max-width: 72rem;
-  --container-padding-x: 1.5rem;
+  --section-padding-y: 6rem;
+  --section-padding-y-sm: 4rem;
+  --section-padding-y-lg: 9rem;
+  --container-max-width: 80rem;
+  --container-padding-x: 2rem;
 
   /* --- SHAPE --- */
-  --radius-global: 0px;
-  --radius-card: 0px;
-  --radius-button: 0px;
+  --radius-global: 8px;
+  --radius-card: 12px;
+  --radius-button: 100px;
 
   /* --- SHADOWS --- */
-  --shadow-card: 0 2px 12px 0 rgba(0, 0, 0, 0.07);
-  --shadow-elevated: 0 8px 32px 0 rgba(0, 0, 0, 0.13);
+  --shadow-card: 0 4px 20px 0 rgba(111, 78, 55, 0.05);
+  --shadow-elevated: 0 12px 48px 0 rgba(111, 78, 55, 0.12);
 
   /* --- NAV --- */
-  --nav-bg: #FDFCFA;
-  --nav-text: #2A2422;
-  --nav-border: #E8DED4;
-  --nav-height: 4rem;
+  --nav-bg: rgba(250, 247, 242, 0.8);
+  --nav-text: #6F4E37;
+  --nav-border: rgba(111, 78, 55, 0.05);
+  --nav-height: 5rem;
 }
 
 /* === BASE RESETS === */

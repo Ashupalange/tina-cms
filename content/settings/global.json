@@ -1,7 +1,7 @@
 {
-  "siteName": "Essenzaa",
-  "siteTagline": "Perfumes & Scents",
-  "logoText": "Essenzaa",
+  "siteName": "Cafedelightt",
+  "siteTagline": "Where Every Sip Feels Like Home",
+  "logoText": "Cafedelightt",
   "logoImage": null,
   "navLinks": [
     {
@@ -9,44 +9,45 @@
       "href": "/"
     },
     {
-      "label": "About Us",
-      "href": "/about"
+      "label": "About",
+      "href": "#about"
     },
     {
-      "label": "Shop",
-      "href": "/shop"
+      "label": "Menu",
+      "href": "#menu"
     },
     {
-      "label": "Collections",
-      "href": "/collection"
+      "label": "Experience",
+      "href": "#experience"
     },
     {
-      "label": "Blogs",
-      "href": "/blogs"
-    },
-    {
-      "label": "Contact",
-      "href": "/contact"
+      "label": "Gallery",
+      "href": "#gallery"
     }
   ],
-  "navCtaLabel": "Private Concierge",
-  "navCtaLink": "/contact",
-  "footerTagline": "Memories suspended in glass.",
+  "navCtaLabel": "Visit Us",
+  "navCtaLink": "#visit",
+  "footerTagline": "Come for the coffee. Stay for the comfort.",
   "footerLinks": [
     {
-      "label": "About",
-      "href": "/about"
+      "label": "Menu",
+      "href": "#menu"
     },
     {
-      "label": "Collection",
-      "href": "/collection"
+      "label": "Story",
+      "href": "#about"
     },
     {
       "label": "Contact",
-      "href": "/contact"
+      "href": "#visit"
     }
   ],
-  "copyrightText": "© 2026 Essenzaa. All rights reserved.",
-  "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@400;500&display=swap",
-  "socialLinks": []
+  "copyrightText": "© 2026 Cafedelightt. All rights reserved.",
+  "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap",
+  "socialLinks": [
+    {
+      "platform": "instagram",
+      "url": "https://instagram.com"
+    }
+  ]
 }

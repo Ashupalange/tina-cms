@@ -29,53 +29,49 @@ fragment SettingsParts on Settings {
 fragment HomeParts on Home {
   __typename
   title
-  headline
-  heroImage
-  introQuote
-  signatureScents {
+  hero {
     __typename
-    title
-    notes
+    tagline
+    ctaPrimary
+    ctaSecondary
+    backgroundImage
+  }
+  about {
+    __typename
+    headline
+    story
     image
   }
-  atelierTitle
-  atelierText
-  atelierImage
-}
-
-fragment AboutParts on About {
-  __typename
-  title
-  headline
-  originImage
-  originStory
-  pillars {
+  menu {
     __typename
-    title
-    description
+    headline
+    items {
+      __typename
+      name
+      description
+      image
+    }
   }
-}
-
-fragment CollectionPageParts on CollectionPage {
-  __typename
-  title
-  headline
-  subheadline
-  scents {
+  experience {
     __typename
-    title
-    notes
+    headline
     description
-    image
+    gallery
   }
-}
-
-fragment ContactParts on Contact {
-  __typename
-  title
-  headline
-  subheadline
-  email
-  instagram
-  phone
+  testimonials {
+    __typename
+    headline
+    list {
+      __typename
+      quote
+      author
+    }
+  }
+  location {
+    __typename
+    headline
+    address
+    hours
+    whatsappNumber
+  }
 }

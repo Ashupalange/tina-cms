@@ -69,88 +69,90 @@ var homeCollection = {
   ui: { router: () => "/" },
   fields: [
     { name: "title", label: "Page Title", type: "string", isTitle: true, required: true },
-    { name: "headline", label: "Hero Headline", type: "string" },
-    { name: "heroImage", label: "Hero Image", type: "image" },
-    { name: "introQuote", label: "Introductory Quote", type: "string", ui: { component: "textarea" } },
     {
-      name: "signatureScents",
-      label: "Signature Scents (Split Layout)",
+      name: "hero",
+      label: "Hero Section",
       type: "object",
-      list: true,
       fields: [
-        { name: "title", label: "Title", type: "string" },
-        { name: "notes", label: "Scent Notes / Feeling", type: "string", ui: { component: "textarea" } },
-        { name: "image", label: "Texture Image", type: "image" }
+        { name: "tagline", label: "Tagline", type: "string" },
+        { name: "ctaPrimary", label: "Primary CTA Label", type: "string" },
+        { name: "ctaSecondary", label: "Secondary CTA Label", type: "string" },
+        { name: "backgroundImage", label: "Background Image", type: "image" }
       ]
     },
-    { name: "atelierTitle", label: "Atelier Title", type: "string" },
-    { name: "atelierText", label: "Atelier Text", type: "string", ui: { component: "textarea" } },
-    { name: "atelierImage", label: "Atelier Image", type: "image" }
-  ]
-};
-var aboutCollection = {
-  name: "about",
-  label: "About Page",
-  path: "content/pages",
-  format: "md",
-  match: { include: "about" },
-  ui: { router: () => "/about" },
-  fields: [
-    { name: "title", label: "Page Title", type: "string", isTitle: true, required: true },
-    { name: "headline", label: "Vision Statement", type: "string", ui: { component: "textarea" } },
-    { name: "originImage", label: "Origin Image", type: "image" },
-    { name: "originStory", label: "Origin Story", type: "string", ui: { component: "textarea" } },
     {
-      name: "pillars",
-      label: "Brand Ethos Pillars",
+      name: "about",
+      label: "About Section",
       type: "object",
-      list: true,
       fields: [
-        { name: "title", label: "Title", type: "string" },
-        { name: "description", label: "Description", type: "string", ui: { component: "textarea" } }
+        { name: "headline", label: "Headline", type: "string" },
+        { name: "story", label: "Emotional Story", type: "string", ui: { component: "textarea" } },
+        { name: "image", label: "Story Image", type: "image" }
       ]
-    }
-  ]
-};
-var collectionCollection = {
-  name: "collectionPage",
-  label: "Collection Page",
-  path: "content/pages",
-  format: "md",
-  match: { include: "collection" },
-  ui: { router: () => "/collection" },
-  fields: [
-    { name: "title", label: "Page Title", type: "string", isTitle: true, required: true },
-    { name: "headline", label: "Entrance Headline", type: "string" },
-    { name: "subheadline", label: "Entrance Subheadline", type: "string", ui: { component: "textarea" } },
+    },
     {
-      name: "scents",
-      label: "The Scents",
+      name: "menu",
+      label: "Signature Menu Section",
       type: "object",
-      list: true,
       fields: [
-        { name: "title", label: "Scent Name", type: "string" },
-        { name: "notes", label: "Scent Notes", type: "string" },
+        { name: "headline", label: "Section Headline", type: "string" },
+        {
+          name: "items",
+          label: "Menu Items",
+          type: "object",
+          list: true,
+          fields: [
+            { name: "name", label: "Item Name", type: "string" },
+            { name: "description", label: "Short Description", type: "string" },
+            { name: "image", label: "Aesthetic Image", type: "image" }
+          ]
+        }
+      ]
+    },
+    {
+      name: "experience",
+      label: "Experience Section",
+      type: "object",
+      fields: [
+        { name: "headline", label: "Headline", type: "string" },
         { name: "description", label: "Description", type: "string", ui: { component: "textarea" } },
-        { name: "image", label: "Bottle / Scent Image", type: "image" }
+        {
+          name: "gallery",
+          label: "Interior Photos",
+          type: "image",
+          list: true
+        }
+      ]
+    },
+    {
+      name: "testimonials",
+      label: "Testimonials",
+      type: "object",
+      fields: [
+        { name: "headline", label: "Headline", type: "string" },
+        {
+          name: "list",
+          label: "Testimonial List",
+          type: "object",
+          list: true,
+          fields: [
+            { name: "quote", label: "Quote", type: "string", ui: { component: "textarea" } },
+            { name: "author", label: "Author", type: "string" }
+          ]
+        }
+      ]
+    },
+    {
+      name: "location",
+      label: "Location & Visit",
+      type: "object",
+      fields: [
+        { name: "headline", label: "Headline", type: "string" },
+        { name: "address", label: "Address Line", type: "string" },
+        { name: "hours", label: "Opening Hours", type: "string", ui: { component: "textarea" } },
+        { name: "whatsappNumber", label: "WhatsApp Number", type: "string" }
       ]
     }
-  ]
-};
-var contactCollection = {
-  name: "contact",
-  label: "Contact Page",
-  path: "content/pages",
-  format: "md",
-  match: { include: "contact" },
-  ui: { router: () => "/contact" },
-  fields: [
-    { name: "title", label: "Page Title", type: "string", isTitle: true, required: true },
-    { name: "headline", label: "Headline", type: "string" },
-    { name: "subheadline", label: "Subheadline", type: "string", ui: { component: "textarea" } },
-    { name: "email", label: "Inquiries Email", type: "string" },
-    { name: "instagram", label: "Instagram Handle", type: "string" },
-    { name: "phone", label: "Concierge Phone", type: "string" }
   ]
 };
 var config_default = defineConfig({
@@ -176,10 +178,7 @@ var config_default = defineConfig({
   schema: {
     collections: [
       settingsCollection,
-      homeCollection,
-      aboutCollection,
-      collectionCollection,
-      contactCollection
+      homeCollection
     ]
   }
 });
